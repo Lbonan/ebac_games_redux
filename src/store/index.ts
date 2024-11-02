@@ -1,6 +1,6 @@
 import {
   combineReducers,
-  configureStore as configStore,
+  configureStore,
   PreloadedState
 } from '@reduxjs/toolkit'
 import carrinhoReducer from './reducers/carrinho'
@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
   [api.reducerPath]: api.reducer
 })
 
-export function configureStore(preloadedState?: PreloadedState<RootState>) {
-  return configStore({
+export function configuraStore(preloadedState?: PreloadedState<RootState>) {
+  return configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(api.middleware),
@@ -21,4 +21,4 @@ export function configureStore(preloadedState?: PreloadedState<RootState>) {
 }
 
 export type RootState = ReturnType<typeof rootReducer>
-export type Appstore = ReturnType<typeof configureStore>
+export type Appstore = ReturnType<typeof configuraStore>

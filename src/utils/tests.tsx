@@ -1,6 +1,6 @@
 import { PreloadedState } from '@reduxjs/toolkit'
 import { render, RenderOptions } from '@testing-library/react'
-import { Appstore, RootState, configureStore } from '../store'
+import { Appstore, RootState, configuraStore } from '../store'
 import { PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
 
@@ -13,7 +13,7 @@ export function renderizarComProvider(
   elemento: React.ReactElement,
   {
     preloadedState = {},
-    store = configureStore(preloadedState),
+    store = configuraStore(preloadedState),
     ...opcoesAdicionais
   }: ExtendedRenderOptions = {}
 ) {
